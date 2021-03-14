@@ -29,6 +29,8 @@ target_link_libraries(Task2 BLibrary)
 
 find_package(GTest REQUIRED)
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
+include_directories(${gtest_INCLUDE_DIR})
+link_directories(${gtest_LIBRARY_DIR})
 enable_testing()
 
 add_executable(Task2_Test C/main_test.cpp C/tests.cpp)
