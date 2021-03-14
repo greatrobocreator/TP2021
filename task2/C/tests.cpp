@@ -1,4 +1,4 @@
-#include "gtest/gtest.n"
+#include "gtest/gtest.h"
 
 TEST(MainTest, IndexTest) {
     EXPECT_EQ(1, 1);
