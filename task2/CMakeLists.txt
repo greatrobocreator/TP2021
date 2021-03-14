@@ -31,6 +31,6 @@ find_package(GTest REQUIRED)
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 enable_testing()
 
-add_executable(Task2_Test C/main_test.cpp tests.cpp)
+add_executable(Task2_Test C/main_test.cpp C/tests.cpp)
 target_link_libraries(Task2_Test gtest gtest_main)
 add_test( NAME Task2_Test COMMAND Task2_Test )
