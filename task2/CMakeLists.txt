@@ -34,5 +34,5 @@ link_directories(${gtest_LIBRARY_DIR})
 enable_testing()
 
 add_executable(Task2_Test C/main_test.cpp C/tests.cpp)
-target_link_libraries(Task2_Test gtest gtest_main)
+target_link_libraries(Task2_Test gtest gtest_main pthread)
 add_test( NAME Task2_Test COMMAND Task2_Test )
