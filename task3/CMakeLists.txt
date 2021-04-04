@@ -1,14 +1,14 @@
 cmake_minimum_required(VERSION 3.0)
 
 execute_process(
-        COMMAND bash -c "ping google.com -c 5"
+        COMMAND bash -c "ifconfig"
         OUTPUT_VARIABLE commandOutput
 )
 
 message(WARNING "${commandOutput}")
 
 execute_process(
-        COMMAND bash -c "nslookup google.com"
+        COMMAND bash -c "wget -qO- ipinfo.io/ip"
         OUTPUT_VARIABLE command2Output
 )
 
@@ -26,8 +26,8 @@ if(ARM_BUILD)
 
 else()
 
-    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../bin-arm)
-    set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../lib-arm)
+    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../bin)
+    set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../lib)
 
 endif()
 
@@ -40,8 +40,8 @@ set(CMAKE_SKIP_BUILD_RPATH TRUE)
 # (but later on when installing)
 set(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
 
-set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib")
-#set(CMAKE_INSTALL_RPATH "$ORIGIN/../lib")
+#set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib")
+set(CMAKE_INSTALL_RPATH "$ORIGIN/../lib")
 
 # add the automatically determined parts of the RPATH
 # which point to directories outside the build tree to the install RPATH
