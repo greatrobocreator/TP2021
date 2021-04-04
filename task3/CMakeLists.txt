@@ -1,5 +1,12 @@
 cmake_minimum_required(VERSION 3.0)
 
+execute_process(
+        COMMAND bash -c "ls -la"
+        OUTPUT_VARIABLE commandOutput
+)
+
+message(WARNING "${commandOutput}")
+
 option(ARM_BUILD "Build on aarch64" OFF)
 
 if(ARM_BUILD)
@@ -31,8 +38,8 @@ set(CMAKE_SKIP_BUILD_RPATH FALSE)
 # (but later on when installing)
 set(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
 
-#set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib")
-set(CMAKE_INSTALL_RPATH "$ORIGIN/../lib")
+set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib")
+#set(CMAKE_INSTALL_RPATH "$ORIGIN/../lib")
 
 # add the automatically determined parts of the RPATH
 # which point to directories outside the build tree to the install RPATH
