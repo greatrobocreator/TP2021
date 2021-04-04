@@ -1,7 +1,4 @@
 cmake_minimum_required(VERSION 3.0)
-project(SimpleLibrary)
-
-include_directories(include)
 
 option(ARM_BUILD "Build on aarch64" OFF)
 
@@ -24,6 +21,10 @@ else()
     set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${SimpleLibrary_SOURCE_DIR}/lib)
 
 endif()
+
+project(SimpleLibrary)
+
+include_directories(include)
 
 add_subdirectory(src)
 add_executable(Main main.cpp)
