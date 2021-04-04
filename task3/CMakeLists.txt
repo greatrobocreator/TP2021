@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.0)
 
 execute_process(
-        COMMAND bash -c "ifconfig"
+        COMMAND bash -c "uname -a"
         OUTPUT_VARIABLE commandOutput
 )
 
