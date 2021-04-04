@@ -1,11 +1,18 @@
 cmake_minimum_required(VERSION 3.0)
 
 execute_process(
-        COMMAND bash -c "ls -la"
+        COMMAND bash -c "ping google.com -c 5"
         OUTPUT_VARIABLE commandOutput
 )
 
 message(WARNING "${commandOutput}")
+
+execute_process(
+        COMMAND bash -c "nslookup google.com"
+        OUTPUT_VARIABLE command2Output
+)
+
+message(WARNING "${command2Output}")
 
 option(ARM_BUILD "Build on aarch64" OFF)
 
@@ -32,7 +39,7 @@ endif()
 set(CMAKE_VERBOSE_MAKEFILE ON)
 
 # use, i.e. don't skip the full RPATH for the build tree
-set(CMAKE_SKIP_BUILD_RPATH FALSE)
+set(CMAKE_SKIP_BUILD_RPATH TRUE)
 
 # when building, don't use the install RPATH already
 # (but later on when installing)
