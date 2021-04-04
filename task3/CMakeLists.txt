@@ -27,9 +27,10 @@ set(CMAKE_SKIP_BUILD_RPATH FALSE)
 
 # when building, don't use the install RPATH already
 # (but later on when installing)
-set(CMAKE_BUILD_WITH_INSTALL_RPATH FALSE)
+set(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
 
-set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib")
+#set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib")
+set(CMAKE_INSTALL_RPATH "$ORIGIN/../lib")
 
 # add the automatically determined parts of the RPATH
 # which point to directories outside the build tree to the install RPATH
@@ -44,3 +45,8 @@ add_executable(Main main.cpp)
 add_executable(MainLib main_lib.cpp)
 
 target_link_libraries(MainLib buffer)
+
+install(TARGETS Main MainLib
+        RUNTIME DESTINATION bin
+        LIBRARY DESTINATION lib
+)
