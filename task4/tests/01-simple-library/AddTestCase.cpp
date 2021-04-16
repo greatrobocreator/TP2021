@@ -5,3 +5,6 @@
 #include "AddTestCase.h"
 #include "Functions.h"
 
+TEST_F(AddTestCase, TwoPlusTwo) {
+    EXPECT_EQ(Add(2, 2), 4);
+}
