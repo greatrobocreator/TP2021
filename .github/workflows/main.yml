@@ -6,7 +6,7 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ master ]
+    branches: [ task5 ]
   pull_request:
     branches: [ master ]
 
@@ -24,11 +24,10 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-        with: 
-          repository: task5
       
       - name: Install GTest
         run: |
+          ls
           mkdir task5/3rdparty && cd task5/3rdparty
           git clone https://github.com/google/googletest.git
 
