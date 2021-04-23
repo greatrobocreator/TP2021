@@ -28,7 +28,7 @@ jobs:
       - name: Install GTest
         run: |
           ls
-          mkdir task5/3rdparty && cd task5/3rdparty
+          cd task5 && mkdir 3rdparty && cd 3rdparty
           git clone https://github.com/google/googletest.git
 
       - name: Build
