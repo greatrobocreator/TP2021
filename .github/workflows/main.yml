@@ -6,9 +6,9 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ master ]
+    branches: [ task5 ]
   pull_request:
-    branches: [ master ]
+    branches: [ task5 ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -27,7 +27,7 @@ jobs:
       
       - name: Install GTest
         run: |
-          cd task5/3rdparty
+          mkdir task5/3rdparty && cd task5/3rdparty
           git clone https://github.com/google/googletest.git
 
       - name: Build
