@@ -4,12 +4,12 @@
 name: CI
 
 # Controls when the action will run. 
-on: [ push, pull_request ]
+on:
   # Triggers the workflow on push or pull request events but only for the master branch
-  #push:
-  #  branches: [ task5 ]
-  #pull_request:
-  #  branches: [ master ]
+  push:
+    branches: [ task5 ]
+  pull_request:
+    branches: [ master ]
 
   # Allows you to run this workflow manually from the Actions tab
   #workflow_dispatch:
@@ -28,8 +28,16 @@ jobs:
       
       - name: Install GTest
         run: |
-          ls
           cd task5 && mkdir 3rdparty && cd 3rdparty
           git clone https://github.com/google/googletest.git
+      
+      
       - name: Build
-        run: mkdir build && pwd
+        env: 
+          GOOGLE_TEST_DIR: googletest
+        
+        run: |
+          mkdir build && cd build && cmake -DCMAKE_INSTALL_PREFIX=../ ..
+          make && make install
+        
+      
