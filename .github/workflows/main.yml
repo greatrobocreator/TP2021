@@ -37,7 +37,7 @@ jobs:
           GOOGLE_TEST_DIR: googletest
         
         run: |
-          mkdir build && cd build && cmake -DCMAKE_INSTALL_PREFIX=../ ..
+          cd task5 && mkdir build && cd build && cmake -DCMAKE_INSTALL_PREFIX=../ ..
           make && make install
         
       
