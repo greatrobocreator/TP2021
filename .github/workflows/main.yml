@@ -47,5 +47,11 @@ jobs:
           report-path: report.xml
           working-directory: task5
         
-      
+      - name: UploadArtifacts
+        uses: actions/upload-artefacts@v2
+        with:
+          name: Distributive
+          path: |
+            task5/bin
+            task5/lib
       
