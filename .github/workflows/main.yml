@@ -39,5 +39,13 @@ jobs:
         run: |
           cd task5 && mkdir build && cd build && cmake -DCMAKE_INSTALL_PREFIX=../ ..
           make && make install
+          
+      - name: Test
+        uses: akhtyamovpavel/ActionGtestReport@v0.0.9
+        with:
+          exec-path: task5/bin/CTestExe
+          report-path: report.xml
+          working-directory: task5
         
+      
       
