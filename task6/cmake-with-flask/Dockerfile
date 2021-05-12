@@ -13,7 +13,7 @@ WORKDIR /home/techproguser
 #RUN mkdir cmake-with-flask
 COPY ./ ./
 #RUN cd cmake-with-flask && mkdir build && cd build && cmake .. && make -j9
-#RUN mkdir build && cd build && cmake .. && make -j9
+RUN mkdir build && cd build && cmake .. && make -j9
 
 #RUN ls
 #RUN ls bin
