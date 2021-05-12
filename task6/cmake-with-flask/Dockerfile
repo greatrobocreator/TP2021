@@ -18,7 +18,7 @@ RUN mkdir build && cd build && cmake .. && make -j9
 #RUN ls
 #RUN ls bin
 
-ARG port=8080
+ARG port=5000
 ARG host=0.0.0.0
 ENV port=${port}
 ENV host=${host}
