@@ -23,7 +23,7 @@ ARG host=0.0.0.0
 ENV port=${port}
 ENV host=${host}
 
-RUN echo ${port}
-RUN echo ${host}
+#RUN echo ${port}
+#RUN echo ${host}
 
-CMD python3 cmake-with-flask/app.py --port ${port} --host ${host}
+CMD python3 app.py --port ${port} --host ${host}
