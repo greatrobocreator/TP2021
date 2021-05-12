@@ -1,5 +1,7 @@
 FROM ubuntu:20.04
 
+ENV DEBIAN_FRONTEND noninteractive
+
 RUN apt update && apt install cmake gcc g++ python3 wget python3-pip -y
 
 RUN pip3 install Flask
