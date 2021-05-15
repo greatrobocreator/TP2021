@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -g -O0 -fprofile-arcs -ftest-coverage --coverage -g -shared -Wl,-soname,lib03-weather.so -o lib03-weather.so CMakeFiles/03-weather.dir/Weather.cpp.o   -L/home/anton/Documents/Education/TP2021/task4/3rdparty/lib  -Wl,-rpath,/home/anton/Documents/Education/TP2021/task4/3rdparty/lib -lcpr -lcurl 

@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -g -O0 -fprofile-arcs -ftest-coverage --coverage -g -shared -Wl,-soname,lib02-tree.so -o lib02-tree.so CMakeFiles/02-tree.dir/Tree.cpp.o   -L/home/anton/Documents/Education/TP2021/task4/3rdparty/lib  -Wl,-rpath,/home/anton/Documents/Education/TP2021/task4/3rdparty/lib /usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0 
